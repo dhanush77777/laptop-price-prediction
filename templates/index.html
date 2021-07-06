@@ -1,0 +1,233 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>Laptop Price Classification</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+ <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+      <style>
+    form{
+      text-align:center;
+      
+   
+    }
+   body{
+      background-color:#0ffcf5;
+     font-style:italic;
+     font-size:20px
+        
+    }
+    #button{
+     background-color:#ed940e
+    }
+    input{
+      background-color:#727571;
+      border-color:black
+        
+    }
+   
+    select{
+      background-color:#727571;
+      border-width:2px;
+      border-radius:3px;
+      border-color:black
+    }
+    input::placeholder{
+      color:white
+    }
+    h1{
+      text-align:center
+    }
+  </style>
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+    <img src="https://tse3.mm.bing.net/th?id=OIP.LrnxjzKo3ouJyb62k64MywAAAA&pid=Api&P=0&w=190&h=153" alt="" width="30" height="27" class="d-inline-block align-text-top">
+    MyLappie
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link " aria-current="page" href="#">Home</a>
+        <a class="nav-link " aria-current="page" href="/eda">EDA</a>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+    <br>
+    <h1>Get the laptop of your choice</h1>
+    <br>
+    
+ 
+    
+    <strong>
+<form action="{{url_for('predict')}}" method="post">
+  
+ 
+
+ 
+   <div class="mb-3">
+     <label for="ram" class="col-sm-2 col-form-label">RAM in GB</label>
+    <select style="color:white" name="RAM_GB" class="form-select" required="required" aria-label="select example" >
+      
+      <option value="8">-----------8GB-----------</option>
+      <option value="16">----------16GB-----------</option>
+      <option value="4">-----------4GB-----------</option>
+      <option value="32">----------32GB-----------</option>
+      
+    </select>
+    </div>
+    
+ <div class="mb-3">
+     <label for="ddr version" class="col-sm-2 col-form-label">DDR Version</label>
+    <select style="color:white" name="DDR_Version" class="form-select" required="required" aria-label="select example" >
+      
+      <option value="4">-----------4--------------</option>
+      <option value="3">-----------3--------------</option>
+     
+      
+    </select>
+    </div>   
+
+<div class="mb-3">
+     <label for="processor name" class="col-sm-2 col-form-label">Processor Name</label>
+    <select style="color:white" name="Processor Name" class="form-select" required="required" aria-label="select example" >
+      
+      <option value="Intel">-----------Intel-----------</option>
+      <option value="AMD">----------AMD-----------</option>
+      <option value="Microsoft">---------Microsoft--------</option>
+      
+      
+    </select>
+    </div>
+    
+<div class="mb-3">
+     <label for="processor type" class="col-sm-2 col-form-label">Processor Type</label>
+    <select style="color:white" name="Processor Type" class="form-select" required="required" aria-label="select example" >
+      
+    <option value="i5">-----------i5----------------</option>
+      <option value="Ryzen 5">-----------Ryzen 5---------</option>
+      <option value="i7">-----------i7-----------</option>
+      <option value="i3">-----------i3----------</option>
+      <option value="Ryzen 7">-----------Ryzen 7---------</option>
+      <option value="Ryzen 3">-----------Ryzen 3---------</option>
+      <option value="SQ1">-----------SQ1----------</option>
+      <option value="APU">-----------APU---------</option>
+      <option value="Pentium">-----------Pentium--------</option>
+      <option value="m3">-----------m3-----------</option>
+      <option value="i9">-----------i9-----------</option>
+      <option value="Athlon">-----------Athlon--------</option>
+      
+    </select>
+    </div>    
+
+<div class="mb-3">
+     <label for="os" class="col-sm-2 col-form-label">Operating System</label>
+    <select style="color:white" name="Operating System Type" class="form-select" required="required" aria-label="select example" >
+      
+      <option value="Windows">----------Windows----------</option>
+      <option value="Mac">----------Mac--------</option>
+      <option value="DOS">---------DOS----------</option>
+      <option value="Linux">---------Linux---------</option>
+      
+      
+    </select>
+    </div>
+    
+    
+<div class="mb-3">
+     <label for="internal gb" class="col-sm-2 col-form-label">Internal Storage in GB</label>
+    <select style="color:white" name="Storage_GB" class="form-select" required="required" aria-label="select example" >
+      
+      <option value="512">-----------512GB----------</option>
+      <option value="1000+256">--------1000+256Gb------</option>
+      <option value="1000">-----------1000GB----------</option>
+      <option value="256">----------256GB--------</option>
+      <option value="1000+128">-----------1000+128GB-----</option>
+      <option value="128">----------128GB----------</option>
+      <option value="1000+512">-----------1000+512GB-----</option>
+      <option value="2000">----------2000GB--------</option>
+      <option value="2000+256">---------2000+256GB------</option>
+      
+      
+    </select>
+    </div> 
+    
+ <div class="mb-3">
+     <label for="disk drive" class="col-sm-2 col-form-label">Disk Drive</label>
+    <select style="color:white" name="Disk Drive" class="form-select" required="required" aria-label="select example" >
+      
+      <option value="SSD">------------SSD-----------</option>
+      <option value="HDD">------------HDD----------</option>
+      <option value="Both">-----------Both------------</option>
+      
+      
+      
+    </select>
+    </div> 
+    
+     <div class="mb-3">
+    <label for="size" class="col-sm-2 col-form-label">Size</label>
+    <input  type="text" name="Size(Inches)" placeholder="size in inches" required="required">
+    
+  </div>    
+    
+ <div class="mb-3">
+     <label for="company" class="col-sm-2 col-form-label">Company</label>
+    <select style="color:white" name="Company" class="form-select" required="required" aria-label="select example" >
+      
+      <option value="HP">-----------HP----------</option>
+      <option value="Asus">---------Asus---------</option>
+      <option value="Acer">----------Acer----------</option>
+      <option value="Dell">----------Dell--------</option>
+      <option value="Lenovo">-------Lenovo-----------</option>
+      <option value="MSI">----------MSI---------</option>
+      <option value="Apple">--------Apple---------</option>
+      <option value="Microsoft">--------Microsoft--------</option>
+      <option value="Avita">---------Avita--------</option>
+      <option value="Alienware">---------Alienware--------</option>
+      <option value="Nexstgo">---------Nexstgo--------</option>
+      
+      
+    </select>
+    </div>
+ 
+  <div class="mb-3">
+     <label for="graphic card" class="col-sm-2 col-form-label">Graphic card</label>
+    <select style="color:white" name="Graphic Card" class="form-select" required="required" aria-label="select example">
+      
+      <option value="yes">-----------yes-----------</option>
+      <option value="no">-----------no-----------</option>
+    </select>
+    
+  </div> 
+   <div class="mb-3">
+     <label for="touch screen" class="col-sm-2 col-form-label">Touch screen</label>
+    <select style="color:white" name="Touchscreen" class="form-select" required="required" aria-label="select example">
+      
+      <option value="yes">-----------yes-----------</option>
+      <option value="no">-----------no-----------</option>
+    </select>
+    
+  </div>
+  <input type="submit" value="sumbit">
+    
+  </form>   
+  
+      <center> {{prediction_text}}  </center>
+
+</body>
+  
+</html>
