@@ -9,3 +9,6 @@ requirements.txt file
 * gunicorn
 * xgboost
 * numpy
+
+
+![working of app](https://drive.google.com/file/d/1akbSheQUVbv58oO3EZYc9w-NtEJoi0kZ/view?usp=sharing)
